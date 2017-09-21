@@ -11,7 +11,7 @@ char BinaryToChar(int *word);
 int main()
 {
 
-	// Объявляем структуры
+	// structures
 	BITMAPFILEHEADER bfh_l;
 	BITMAPINFOHEADER bih_l;
 	RGBTRIPLE rgb_l;
@@ -25,9 +25,9 @@ int main()
 	f1 = fopen("n.bmp", "r+b");
 	f2 = fopen("4.bmp", "w+b");
 
-	fread(&bfh_l, sizeof(bfh_l), 1, f1);               //Запихиваем файловый заголовок в структуру BITMAPFILEHEADER
+	fread(&bfh_l, sizeof(bfh_l), 1, f1);               //BITMAPFILEHEADER
 	fwrite(&bfh_l, sizeof(bfh_l), 1, f2);   //
-	fread(&bih_l, sizeof(bih_l), 1, f1);               //Запихиваем заголовок изображения в структуру BITMAPINFOHEADER
+	fread(&bih_l, sizeof(bih_l), 1, f1);               //BITMAPINFOHEADER
 	fwrite(&bih_l, sizeof(bih_l), 1, f2);   //
 
 	size_t padding = 0;
