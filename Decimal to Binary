@@ -1,0 +1,12 @@
+void DecimalToBinary(char c, int *word)
+{
+	cout << (int)c<<endl;
+	int number=(int)c;
+	int i = 6;
+	while (number != 0)
+	{
+		word[i] = number % 2;
+		number /= 2;
+		i--;
+	}
+}void DecimalToBinary(char c, int *word);
