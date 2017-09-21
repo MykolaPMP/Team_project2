@@ -8,7 +8,6 @@ using namespace std;
 int main()
 {
 
-	// Объявляем структуры
 	BITMAPFILEHEADER bfh_l;
 	BITMAPINFOHEADER bih_l;
 	RGBTRIPLE rgb_l;
