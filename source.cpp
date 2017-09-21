@@ -2,7 +2,7 @@
 #include "Windows.h";
 #include <fstream>
 using namespace std;
-
+char BinaryToChar(int *word);
 
 
 int main()
@@ -67,4 +67,14 @@ int main()
 
 	system("pause");
 	return 0;
+}
+
+char BinaryToChar(int *word) 
+{
+	int n = 0;
+	for (int i = 0; i < 7; i++) 
+	{
+		n += word[i] * pow(2, 6-i);
+	}
+	return n;
 }
