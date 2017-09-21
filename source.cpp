@@ -6,8 +6,11 @@ using namespace std;
 void DecimalToBinary(char c, int *word);
 char BinaryToChar(int *word);
 
+
+
 int main()
 {
+
 	// structures
 	BITMAPFILEHEADER bfh_l;
 	BITMAPINFOHEADER bih_l;
@@ -17,13 +20,15 @@ int main()
 	char*hide = new char[100];
 	int *word = new int[7];
 
+
+
 	f1 = fopen("n.bmp", "r+b");
 	f2 = fopen("4.bmp", "w+b");
 
-	fread(&bfh_l, sizeof(bfh_l), 1, f1);    //BITMAPFILEHEADER
-	fwrite(&bfh_l, sizeof(bfh_l), 1, f2);   
-	fread(&bih_l, sizeof(bih_l), 1, f1);    //BITMAPINFOHEADER
-	fwrite(&bih_l, sizeof(bih_l), 1, f2);  
+	fread(&bfh_l, sizeof(bfh_l), 1, f1);               //BITMAPFILEHEADER
+	fwrite(&bfh_l, sizeof(bfh_l), 1, f2);   //
+	fread(&bih_l, sizeof(bih_l), 1, f1);               //BITMAPINFOHEADER
+	fwrite(&bih_l, sizeof(bih_l), 1, f2);   //
 
 	size_t padding = 0;
 	if ((bih_l.biWidth * 3) % 4) 
@@ -36,6 +41,7 @@ int main()
 
 	for (int i = 0; i< 1; i++)
 	{
+		
 		while (!feof(f1))
 		{
 			//coding
@@ -78,6 +84,8 @@ int main()
 	fread(&bfh_l, sizeof(bfh_l), 1, f2);
 	fread(&bih_l, sizeof(bih_l), 1, f2);
 	//decoding
+	cout << "Decoding... decoding..." << endl;
+	cout << "and the word was: ";
 	for (int i = 0; i < strlen(hide) * 7; i++)
 	{
 		fread(&rgb_l, sizeof(rgb_l), 1, f1);
@@ -103,6 +111,7 @@ int main()
 	return 0;
 }
 
+
 void DecimalToBinary(char c, int *word)
 {
 	int number = (int)c;
@@ -114,7 +123,6 @@ void DecimalToBinary(char c, int *word)
 		i--;
 	}
 }
-
 char BinaryToChar(int *word)
 {
 	int n = 0;
