@@ -76,5 +76,6 @@ char BinaryToChar(int *word)
 	{
 		n += word[i] * pow(2, 6-i);
 	}
+	
 	return n;
 }
