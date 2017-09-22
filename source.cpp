@@ -4,6 +4,7 @@
 using namespace std;
 
 void DecimalToBinary(char c, int *word);
+void DecimalToBinary(char c, int *word);
 char BinaryToChar(int *word);
 
 
@@ -111,7 +112,18 @@ int main()
 	return 0;
 }
 
-
+void DecimalToBinary(char c, int *word)
+{
+	cout << (int)c<<endl;
+	int number=(int)c;
+	int i = 6;
+	while (number != 0)
+	{
+		word[i] = number % 2;
+		number /= 2;
+		i--;
+	}
+}
 void DecimalToBinary(char c, int *word)
 {
 	int number = (int)c;
